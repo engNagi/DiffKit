@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.3" />
+<title>DiffKit Frequently Asked Questions</title>
+<link rel="stylesheet" href="resources/diffkit.css" type="text/css" />
+<script type="text/javascript">
+/*<![CDATA[*/
+window.onload = function(){asciidoc.footnotes(); asciidoc.toc(2);}
+/*]]>*/
+</script>
+<script type="text/javascript" src="resources/asciidoc-xhtml11.js"></script>
+</head>
+<body class="article">
+<div id="header">
+<h1>DiffKit Frequently Asked Questions</h1>
+<span id="author">Joe Panico</span><br />
+<span id="revnumber">version 0.9.0,</span>
+<span id="revdate">01/21/2011 (SVN 365)</span>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_does_diffkit_work_with_java_1_4">Does DiffKit work with Java 1.4?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>No. DiffKit works only with Java 1.5+.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_does_diffkit_have_a_gui_graphical_user_interface">Does DiffKit have a GUI (Graphical User Interface)?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>No. DiffKit works strictly from the command line, and is configured with XML
+files.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_is_there_any_documentation">Is there any documentation?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Yes, DiffKit is documented extensively. Please read the QuickStart document and
+the User Guide.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_know_that_diffkit_is_producing_correct_results">How do I know that DiffKit is producing correct results?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>DiffKit is covered by an extensive functional TestSuite, which exercises all
+major features of the framework. All tests in this TestSuite are thoroughly
+documented. You can exercise the TestSuite at any time:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>java -jar diffkit-app.jar -test</tt></pre>
+</div></div>
+<div class="paragraph"><p>In the above invocation, the TestSuite executes against an embedded H2 database.
+To execute the TestSuite against your database, edit the dbConnectionInfo
+configuration files in the conf/ directory (either DB2 or Oracle). Then invoke
+the TestSuite with a "flavors" parameter value (e.g. if you have an Oracle
+database):</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>   java -jar diffkit-app.jar -test flavors=ORACLE</tt></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_can_diffkit_compare_db_tables_across_different_physical_logical_databases">Can DiffKit compare DB tables across different physical/logical Databases?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Yes.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_can_diffkit_compare_db_tables_across_different_vendors_e_g_oracle_vs">Can DiffKit compare DB tables across different vendors (e.g. Oracle vs.</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>MySQL)?</p></div>
+<div class="paragraph"><p>Yes.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_does_diffkit_connect_to_sql_databases">How does DiffKit connect to SQL databases?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Strictly type 4 JDBC drivers.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_can_diffkit_help_me_diff_programming_code">Can DiffKit help me diff programming code?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>DiffKit is designed to diff <em>tabular</em> data, not tracts of textual data.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_can_diffkit_diff_database_schemas">Can DiffKit diff database schemas?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Yes! But you have to point it at the right catalog (or schema) tables, and
+provide appropriate where clauses, for your particular database.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_does_diffkit_work_with_java_1_7">Does DiffKit work with Java 1.7?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Probably, but we haven&#8217;t tested it. If you do test DK on Java 1.7, please send
+us a report.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_will_diffkit_be_backported_to_java_1_4">Will DiffKit be backported to Java 1.4?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Not currently planned.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_does_diffkit_work_with_my_particular_jvm_os_db">Does DiffKit work with my particular JVM/OS/DB?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Check the <a href="compatibility.html">Compatibility Matrix</a>.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_much_does_diffkit_cost_for_commercial_use">How much does DiffKit cost for commercial use?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>DiffKit is licensed under the Apache License 2.0, which allows free commercial
+use.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_can_i_embed_diffkit_as_a_library_in_a_commercial_product">Can I embed DiffKit (as a library) in a commercial product?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Yes! DiffKit is licensed under the Apache License 2.0, which allows for all
+forms of commercial use.</p></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Version 0.9.0<br />
+Last updated 2011-01-21 07:18:28 EST
+</div>
+</div>
+</body>
+</html>
